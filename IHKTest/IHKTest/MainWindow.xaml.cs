@@ -101,5 +101,12 @@ namespace IHKTest
         {
 
         }
+
+        private void DatePicker_CalendarClosed(object sender, RoutedEventArgs e)
+        {
+            DateTime date = new DateTime(datePicker.SelectedDate.Value.Year, datePicker.SelectedDate.Value.Month, datePicker.SelectedDate.Value.Day);
+            
+            Console.WriteLine((int)date.DayOfWeek);//ohne cast = Name vom Tag
+        }
     }
 }
