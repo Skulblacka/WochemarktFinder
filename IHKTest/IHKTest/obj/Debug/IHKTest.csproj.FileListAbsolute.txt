@@ -1,0 +1,30 @@
+C:\Users\Meister\source\repos\IHKTest\IHKTest\bin\Debug\IHKTest.exe.config
+C:\Users\Meister\source\repos\IHKTest\IHKTest\bin\Debug\IHKTest.exe
+C:\Users\Meister\source\repos\IHKTest\IHKTest\bin\Debug\IHKTest.pdb
+C:\Users\Meister\source\repos\IHKTest\IHKTest\obj\Debug\IHKTest.csprojResolveAssemblyReference.cache
+C:\Users\Meister\source\repos\IHKTest\IHKTest\obj\Debug\MainWindow.g.cs
+C:\Users\Meister\source\repos\IHKTest\IHKTest\obj\Debug\App.g.cs
+C:\Users\Meister\source\repos\IHKTest\IHKTest\obj\Debug\IHKTest_MarkupCompile.cache
+C:\Users\Meister\source\repos\IHKTest\IHKTest\obj\Debug\IHKTest_MarkupCompile.lref
+C:\Users\Meister\source\repos\IHKTest\IHKTest\obj\Debug\MainWindow.baml
+C:\Users\Meister\source\repos\IHKTest\IHKTest\obj\Debug\IHKTest.g.resources
+C:\Users\Meister\source\repos\IHKTest\IHKTest\obj\Debug\IHKTest.Properties.Resources.resources
+C:\Users\Meister\source\repos\IHKTest\IHKTest\obj\Debug\IHKTest.csproj.GenerateResource.cache
+C:\Users\Meister\source\repos\IHKTest\IHKTest\obj\Debug\IHKTest.csproj.CoreCompileInputs.cache
+C:\Users\Meister\source\repos\IHKTest\IHKTest\obj\Debug\IHKTest.exe
+C:\Users\Meister\source\repos\IHKTest\IHKTest\obj\Debug\IHKTest.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\IHKTest\IHKTest\bin\Debug\IHKTest.exe.config
+C:\Users\user\Documents\Visual Studio 2017\Projects\IHKTest\IHKTest\bin\Debug\IHKTest.exe
+C:\Users\user\Documents\Visual Studio 2017\Projects\IHKTest\IHKTest\bin\Debug\IHKTest.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\IHKTest\IHKTest\obj\Debug\IHKTest.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\IHKTest\IHKTest\obj\Debug\MainWindow.g.cs
+C:\Users\user\Documents\Visual Studio 2017\Projects\IHKTest\IHKTest\obj\Debug\App.g.cs
+C:\Users\user\Documents\Visual Studio 2017\Projects\IHKTest\IHKTest\obj\Debug\IHKTest_MarkupCompile.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\IHKTest\IHKTest\obj\Debug\IHKTest_MarkupCompile.lref
+C:\Users\user\Documents\Visual Studio 2017\Projects\IHKTest\IHKTest\obj\Debug\MainWindow.baml
+C:\Users\user\Documents\Visual Studio 2017\Projects\IHKTest\IHKTest\obj\Debug\IHKTest.g.resources
+C:\Users\user\Documents\Visual Studio 2017\Projects\IHKTest\IHKTest\obj\Debug\IHKTest.Properties.Resources.resources
+C:\Users\user\Documents\Visual Studio 2017\Projects\IHKTest\IHKTest\obj\Debug\IHKTest.csproj.GenerateResource.Cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\IHKTest\IHKTest\obj\Debug\IHKTest.exe
+C:\Users\user\Documents\Visual Studio 2017\Projects\IHKTest\IHKTest\obj\Debug\IHKTest.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\IHKTest\IHKTest\obj\Debug\IHKTest.csproj.ResolveComReference.cache
