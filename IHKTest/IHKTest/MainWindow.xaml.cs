@@ -74,7 +74,7 @@ namespace IHKTest
            List<Data> data= new Reader().ReadExcel();
            manager = new Manager(data);
 
-            printView(data);
+           printView(data);
         }
 
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -89,19 +89,28 @@ namespace IHKTest
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            if (datePicker.Text != null)
-            {
-                DateTime date = new DateTime(datePicker.SelectedDate.Value.Year, datePicker.SelectedDate.Value.Month, datePicker.SelectedDate.Value.Day);
+            var hour = "";
+            var dateTime=0;
+           
 
-                var hour = "";
+            if (datePicker.Text != "")
+            {
+               DateTime date = new DateTime(datePicker.SelectedDate.Value.Year, datePicker.SelectedDate.Value.Month, datePicker.SelectedDate.Value.Day);
+                dateTime = (int)date.DayOfWeek;
+            }
+
+            if (TimePicker.SelectedValue != null)
+            {
                 hour = TimePicker.SelectedValue.ToString();
                 hour = hour.Substring(38, 5);
-
-                listView.Items.Clear();
-                printView(manager.getSortedDataList((int)date.DayOfWeek, hour));
-
             }
-            
+
+
+
+
+            listView.Items.Clear();
+            printView(manager.getSortedDataList(dateTime, hour));
+
         }
 
         private void printView(List<Data> data)
@@ -111,6 +120,13 @@ namespace IHKTest
             {
                 this.listView.Items.Add(d);
             }
+        }
+
+        private void btnFilter_Click(object sender, RoutedEventArgs e)
+        {
+            printView(manager.getData());
+            TimePicker.SelectedValue = null;
+            datePicker.SelectedDate = DateTime.Now;
         }
     }
 }

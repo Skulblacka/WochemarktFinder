@@ -17,10 +17,9 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="175,13,0,0" VerticalAlignment="Top" Width="136" Height="38" CalendarClosed="DatePicker_CalendarClosed" IsTodayHighlighted="True"/>
-        <TextBox HorizontalAlignment="Left" Height="38" Margin="10,13,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="142"/>
-        <Button x:Name="btnSearch" HorizontalAlignment="Left" Margin="646,13,0,0" VerticalAlignment="Top" Width="136" Height="38" Content="Suche starten" Click="btnSearch_Click"/>
-        <ComboBox Name="TimePicker" HorizontalAlignment="Left" Margin="338,13,0,0" VerticalAlignment="Top" Width="130" Height="38">
+        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="48,43,0,0" VerticalAlignment="Top" Width="142" Height="23" CalendarClosed="DatePicker_CalendarClosed" IsTodayHighlighted="True"/>
+        <Button x:Name="btnSearch" HorizontalAlignment="Left" Margin="646,13,0,0" VerticalAlignment="Top" Width="136" Height="51" Content="Suche starten" Click="btnSearch_Click"/>
+        <ComboBox Name="TimePicker" HorizontalAlignment="Left" Margin="48,13,0,0" VerticalAlignment="Top" Width="142" Height="23">
             <ComboBoxItem>07:00 Uhr</ComboBoxItem>
             <ComboBoxItem>08:00 Uhr</ComboBoxItem>
             <ComboBoxItem>09:00 Uhr</ComboBoxItem>
@@ -37,5 +36,7 @@
             <ComboBoxItem>20:00 Uhr</ComboBoxItem>
         
         </ComboBox>
+        <Button x:Name="btnFilter" Content="Filter löschen" HorizontalAlignment="Left" Margin="218,13,0,0" VerticalAlignment="Top" Width="136" Height="51" Click="btnFilter_Click"/>
+        <Label x:Name="timeLable" Content="Zeit:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.399,-0.758"/>
     </Grid>
 </Window>
