@@ -124,6 +124,8 @@ namespace IHKTest
 
         private void btnFilter_Click(object sender, RoutedEventArgs e)
         {
+            listView.Items.Clear();
+
             printView(manager.getData());
             TimePicker.SelectedValue = null;
             datePicker.SelectedDate = DateTime.Now;
