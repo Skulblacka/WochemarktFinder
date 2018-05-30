@@ -13,5 +13,6 @@ namespace IHKTest
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

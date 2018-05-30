@@ -25,14 +25,17 @@ namespace IHKTest
         {
             // Initialize
             this.InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
             // Add columns
             var gridView = new GridView();
             this.listView.View = gridView;
+            
             gridView.Columns.Add(new GridViewColumn
             {
                 Header = "Bezirk",
                 DisplayMemberBinding = new Binding("Bezirk")
+               
             });
             gridView.Columns.Add(new GridViewColumn
             {
@@ -70,11 +73,12 @@ namespace IHKTest
                 DisplayMemberBinding = new Binding("Bemerkungen")
             });
 
+            datePicker.SelectedDate = DateTime.Now;
+            List<Data> data= new Reader().ReadExcel();
+            manager = new Manager(data);
 
-           List<Data> data= new Reader().ReadExcel();
-           manager = new Manager(data);
-
-           printView(data);
+            btnSearch_Click(null,null);
+           //printView(data);
         }
 
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -82,21 +86,40 @@ namespace IHKTest
 
         }
 
+        void gridViewColumnHeaderClickedHandler(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine(e.OriginalSource.GetType());		
+
+        }
+
         private void DatePicker_CalendarClosed(object sender, RoutedEventArgs e)
         {
-         
+            btnSearch.IsEnabled = true;
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             var hour = "";
-            var dateTime=0;
+            var dateTime=999;
            
 
             if (datePicker.Text != "")
             {
                DateTime date = new DateTime(datePicker.SelectedDate.Value.Year, datePicker.SelectedDate.Value.Month, datePicker.SelectedDate.Value.Day);
-                dateTime = (int)date.DayOfWeek;
+                if (date < DateTime.Today)
+                {
+                    MessageBoxResult result= MessageBox.Show("Achtung, das eingegebene Datum liegt in der Vergangenheit und wird keine Treffer erzeugen", "Falsche Eingabe",MessageBoxButton.OK, MessageBoxImage.Information); ;
+
+                    if (result== MessageBoxResult.OK)
+                    {
+                        printView(manager.getData());
+                    }
+                }
+                else
+                {
+                    dateTime = (int)date.DayOfWeek;
+                }
+                
             }
 
             if (TimePicker.SelectedValue != null)
@@ -104,18 +127,14 @@ namespace IHKTest
                 hour = TimePicker.SelectedValue.ToString();
                 hour = hour.Substring(38, 5);
             }
-
-
-
-
-            listView.Items.Clear();
-            printView(manager.getSortedDataList(dateTime, hour));
-
+                
+                printView(manager.getSortedDataList(dateTime, hour));
+   
         }
 
         private void printView(List<Data> data)
         {
-            
+            listView.Items.Clear();
             foreach (Data d in data)
             {
                 this.listView.Items.Add(d);
@@ -124,11 +143,19 @@ namespace IHKTest
 
         private void btnFilter_Click(object sender, RoutedEventArgs e)
         {
-            listView.Items.Clear();
+            
 
             printView(manager.getData());
             TimePicker.SelectedValue = null;
-            datePicker.SelectedDate = DateTime.Now;
+            datePicker.SelectedDate = null;
+            btnSearch.IsEnabled = false;
         }
+
+        private void TimePicker_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnSearch.IsEnabled = true;
+        }
+
+     
     }
 }

@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace IHKTest
-{
+{/// <summary>
+/// Klasse regelet verschiedene Aufgaben aufgaben der Datenverarbeitung. Z.B. wird hier gefiltert
+/// </summary>
     class Manager
     {
         List<Data> data = new List<Data>();
@@ -20,21 +22,25 @@ namespace IHKTest
             return data;
         }
 
+        /// <summary>
+        /// Methode filtert die Datensätze nach Zeit und Datum und gibt eine neuen Datensatz zurück
+        /// </summary>
+        /// <param name="date">kann 0-6 sein um einen Wochentag zu repraesentieren</param>
+        /// <param name="time">gibt die Zeit in vollen Stunden an</param>
+        /// <returns></returns>
         public List<Data> getSortedDataList(int date, String time)
         {
-            int debaugCount = 0;
             List<Data> sortedData = new List<Data>();
             foreach(Data d in data)
             {
-                Console.WriteLine(debaugCount++);
-                //Wenn Datum gegeben
-                if (date!=0)
+                //Wenn Datum nicht gegeben
+                if (date!= 999)
                 {
-                    if (d.Tage.Contains(getDayOfWeek(date)))//TODO
+                    if (d.Tage.Contains(getDayOfWeek(date)))
                     {
-                        if (!time.Equals(""))
+                        if (!time.Equals(""))//Wenn zeit nicht leer
                         {
-                            if (isInTime(d.Zeiten, time))
+                            if (isInTime(d.Zeiten, time))//wenn Zeitpunt in Zeitraum ist
                             {
                                 sortedData.Add(new Data { Bezirk = d.Bezirk, Marktort = d.Marktort, Tage = d.Tage, Zeiten = d.Zeiten, Betreiber = d.Betreiber, EMail = d.EMail, WWW = d.WWW, Bemerkungen = d.Bemerkungen });
                             }
@@ -61,6 +67,11 @@ namespace IHKTest
             return sortedData;
         }
 
+        /// <summary>
+        /// Hilfsmethode um Wochentage besser zu zuordnen
+        /// </summary>
+        /// <param name="i">0-6 Wochentag</param>
+        /// <returns></returns>
         private String getDayOfWeek(int i)
         {
             switch (i)
@@ -77,13 +88,19 @@ namespace IHKTest
                     return "Fr";
                 case 6:
                     return "Sa";
-                case 7:
+                case 0:
                     return "So";
                 default:
                     return "error";
             }
         }
 
+        /// <summary>
+        /// Hilfsmethode um zu pruefen ob ein Zeitpunk in einem Zeitrum liegt
+        /// </summary>
+        /// <param name="timeRange">Zeitspanne</param>
+        /// <param name="time">zeitpunkt</param>
+        /// <returns></returns>
         private bool isInTime(String timeRange, String time)
         {
             String timeRangeStart = "";
@@ -126,22 +143,23 @@ namespace IHKTest
                     }
                     
                 }
-               // Console.WriteLine(timeRange[i]);
             }
-
+           
             if (getTimeValue(time) >= getTimeValue(timeRangeStart) && getTimeValue(time) < getTimeValue(timeRangeEnd))
             {
                 return true;
             }
 
-            Console.WriteLine("timeRangeStart: " + timeRangeStart);
-            Console.WriteLine("timeRangeEnd: " + timeRangeEnd);
-            Console.WriteLine("time: " + time);
-            Console.WriteLine("doubleDot: " + doubleDot);
+            
 
             return false;
         }
 
+        /// <summary>
+        /// Hilfsmethode um zeitangaben besser zu verarbeiten
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns></returns>
         private int getTimeValue(String time)
         {
             if (time != "")
@@ -163,39 +181,7 @@ namespace IHKTest
         
 
            
-            //switch (time)
-            //{
-            //    case "07:00":
-            //        return 7;
-            //    case "08:00":
-            //        return 8;
-            //    case "09:00":
-            //        return 9;
-            //    case "10:00":
-            //        return 10;
-            //    case "11:00":
-            //        return 11;
-            //    case "12:00":
-            //        return 12;
-            //    case "13:00":
-            //        return 13;
-            //    case "14:00":
-            //        return 14;
-            //    case "15:00":
-            //        return 15;
-            //    case "16:00":
-            //        return 16;
-            //    case "17:00":
-            //        return 17;
-            //    case "18:00":
-            //        return 18;
-            //    case "19:00":
-            //        return 19;
-            //    case "20:00":
-            //        return 20;
-            //    default:
-            //        return 999;
-            //}
+            
         }
     }
 }
