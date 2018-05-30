@@ -9,7 +9,9 @@ using System.Data;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace IHKTest
-{
+{/// <summary>
+/// Klasse liest aus einen xls Datei und gibt einen List mit Daten zurueck
+/// </summary>
     class Reader
 
         //http://csharp.net-informations.com/excel/csharp-read-excel.htm 14.05.2018 11:04 Excel auslesen
@@ -28,7 +30,7 @@ namespace IHKTest
             int cl = 0;
 
             xlApp = new Excel.Application();
-            xlWorkBook = xlApp.Workbooks.Open(@"C:\Users\user\Desktop\Git\WochemarktFinder\IHKTest\Wochenmaerkte.xls", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
+            xlWorkBook = xlApp.Workbooks.Open(@"C:\Users\paczoch\Desktop\TempGit\WochenmarktFinder\IHKTest\Wochenmaerkte.xls", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
             xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
             range = xlWorkSheet.UsedRange;
