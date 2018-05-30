@@ -5,15 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IHKTest"
         mc:Ignorable="d"
-        Title="WochenmarktFinder" Height="1016.5" Width="1309" Background="#FF4F94C3">
+        Title="WochenmarktFinder" Height="1016.5" Width="1333" Background="#FF173549">
 
     <Grid Margin="0,10,2,-21" RenderTransformOrigin="7.551,0.498">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition x:Name="Test" Width="46*"/>
-            <ColumnDefinition Width="279*"/>
-            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition x:Name="Test"/>
         </Grid.ColumnDefinitions>
-        <ListView x:Name="listView" Margin="15,77,15,56" SelectionChanged="listView_SelectionChanged" RenderTransformOrigin="0.5,0.5" IsSynchronizedWithCurrentItem="True" Grid.ColumnSpan="2" >
+        <ListView x:Name="listView" Margin="15,77,15,37" SelectionChanged="listView_SelectionChanged" RenderTransformOrigin="0.5,0.5" IsSynchronizedWithCurrentItem="True" >
             <ListView.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -28,8 +26,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="48,41,0,0" VerticalAlignment="Top" Width="142" Height="23" CalendarClosed="DatePicker_CalendarClosed" IsTodayHighlighted="True" Background="#FFF7F7F7" Grid.ColumnSpan="2"/>
-        <ComboBox Name="TimePicker" HorizontalAlignment="Left" Margin="48,13,0,0" VerticalAlignment="Top" Width="142" Height="23" SelectionChanged="TimePicker_SelectionChanged" BorderBrush="#FF8B8B8B" Foreground="#FF514E4E" Grid.ColumnSpan="2">
+        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="48,41,0,0" VerticalAlignment="Top" Width="142" Height="23" CalendarClosed="DatePicker_CalendarClosed" IsTodayHighlighted="True" Background="#FFF7F7F7"/>
+        <ComboBox Name="TimePicker" HorizontalAlignment="Left" Margin="48,13,0,0" VerticalAlignment="Top" Width="142" Height="23" SelectionChanged="TimePicker_SelectionChanged" BorderBrush="#FF8B8B8B" Foreground="#FF514E4E">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                     <GradientStop Color="#FFF0F0F0" Offset="0"/>
@@ -53,8 +51,8 @@
             <ComboBoxItem>20:00 Uhr</ComboBoxItem>
 
         </ComboBox>
-        <Button x:Name="btnFilter" Content="Filter löschen" HorizontalAlignment="Left" Margin="34.5,13,0,0" VerticalAlignment="Top" Width="136" Height="51" Click="btnFilter_Click" Background="#FFFF5A5A" FontSize="14" Grid.Column="1"/>
-        <Label x:Name="timeLable" Content="Zeit:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.399,-0.758" Height="26" Width="33"/>
-        <Button x:Name="btnSearch" HorizontalAlignment="Right" Margin="0,13,15,0" Width="135" Height="51" Content="Suche starten" Click="btnSearch_Click" Padding="1" VerticalAlignment="Top" Background="#FF72C577" Foreground="Black" FontSize="14" Grid.Column="1"/>
+        <Button x:Name="btnFilter" Content="Filter löschen" HorizontalAlignment="Left" Margin="212,13,0,0" VerticalAlignment="Top" Width="136" Height="51" Click="btnFilter_Click" Background="#FFE03636" FontSize="14"/>
+        <Label x:Name="timeLable" Content="Zeit:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.399,-0.758" Height="26" Width="33" Foreground="White"/>
+        <Button x:Name="btnSearch" HorizontalAlignment="Right" Margin="0,13,15,0" Width="135" Height="51" Content="Suche starten" Click="btnSearch_Click" Padding="1" VerticalAlignment="Top" Background="#FF44B24A" Foreground="Black" FontSize="14"/>
     </Grid>
 </Window>

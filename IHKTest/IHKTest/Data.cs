@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 /// <summary>
-/// Klasse Stellt immer einen Datenstatz dar. Der datensatz wird an vom Manager in eine Liste gehalten
+/// Klasse Stellt immer einen Datenstatz dar. Der datensatz wird an vom Manager in eine Liste gehalten.
 /// </summary>
 namespace IHKTest
 {
