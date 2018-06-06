@@ -28,9 +28,9 @@ namespace IHKTest
             int cCnt;
             int rw = 0;
             int cl = 0;
-
+           
             xlApp = new Excel.Application();
-            xlWorkBook = xlApp.Workbooks.Open(@"C:\Users\paczoch\Desktop\SchuleGit\WochemarktFinder\IHKTest\Wochenmaerkte.xls", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
+            xlWorkBook = xlApp.Workbooks.Open(getPathFromXLS(), 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
             xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
             range = xlWorkSheet.UsedRange;
@@ -58,6 +58,21 @@ namespace IHKTest
             //Marshal.ReleaseComObject(xlWorkBook);
             //Marshal.ReleaseComObject(xlApp);
             return data;
+        }
+
+        private String getPathFromXLS()
+        {
+            String location = System.Reflection.Assembly.GetEntryAssembly().Location;
+            String path = "";
+            if (location.Contains("IHKTest.exe"))
+            {
+                int index = location.IndexOf("IHKTest.exe");
+                path = location.Remove(index);
+                path = path + "Wochenmaerkte.xls";
+            }
+
+
+            return path;
         }
     }
 
