@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace IHKTest
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaktionslogik für MainWindow.xaml, zudem werden die Einzelnen Komponenten hier auch geupdeted
     /// </summary>
     public partial class MainWindow : Window
     {
