@@ -11,6 +11,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 namespace IHKTest
 {/// <summary>
 /// Klasse liest aus einen xls Datei und gibt einen List mit Daten zurueck
+/// erstellt von Tilmann Paczoch    
 /// </summary>
     class Reader
 
@@ -39,7 +40,8 @@ namespace IHKTest
 
             List<Data> data = new List<Data>();
             String[] arr;
-
+            
+            //durchlaufe xls Datei zelle fuer zelle
             for (rCnt = 2; rCnt <= rw; rCnt++)
             {
                 arr = new String[cl + 1];
