@@ -17,6 +17,7 @@ namespace IHKTest
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml, zudem werden die Einzelnen Komponenten hier auch geupdeted
+    /// erstellt von Jan Ninerza und Tilmann Paczoch
     /// </summary>
     public partial class MainWindow : Window
     {
