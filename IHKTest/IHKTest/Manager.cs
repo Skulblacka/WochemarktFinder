@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace IHKTest
 {/// <summary>
 /// Klasse regelet verschiedene Aufgaben aufgaben der Datenverarbeitung. Z.B. wird hier gefiltert
+/// erstellt von Jan Ninerza und Tilmann Paczoch    
 /// </summary>
     class Manager
     {
