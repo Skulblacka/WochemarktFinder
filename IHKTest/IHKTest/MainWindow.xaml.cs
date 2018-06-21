@@ -79,7 +79,8 @@ namespace IHKTest
             manager = new Manager(new Reader().ReadExcel());
 
             btnSearch_Click(null,null);
-           //printView(data);
+            btnSearch.IsEnabled = false;
+            //printView(data);
         }
 
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
