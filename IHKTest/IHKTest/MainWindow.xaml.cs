@@ -75,17 +75,15 @@ namespace IHKTest
             });
 
             datePicker.SelectedDate = DateTime.Now;
-            List<Data> data= new Reader().ReadExcel();
-            manager = new Manager(data);
+             
+            manager = new Manager(new Reader().ReadExcel());
 
             btnSearch_Click(null,null);
            //printView(data);
         }
 
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        {}
 
         void gridViewColumnHeaderClickedHandler(object sender, RoutedEventArgs e)
         {

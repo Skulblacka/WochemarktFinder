@@ -41,7 +41,7 @@ namespace IHKTest
             List<Data> data = new List<Data>();
             String[] arr;
             
-            //durchlaufe xls Datei zelle fuer zelle
+            //durchlaufe xls Datei Zelle fuer Zelle
             for (rCnt = 2; rCnt <= rw; rCnt++)
             {
                 arr = new String[cl + 1];
